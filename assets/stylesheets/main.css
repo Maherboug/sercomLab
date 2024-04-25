@@ -1,0 +1,1241 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.2s linear;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #edecf8;
+  display: initial;
+  width: 100%;
+  font-family: tahoma;
+  background-size: cover;
+  /* Set the desired background color for the whole page */
+}
+
+
+
+
+header,
+body,
+footer {
+
+  max-width: 100%;
+}
+
+:root {
+  --min-color: #fff;
+  --sc-color: #3ec1d5;
+  --th-color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0.5rem;
+  font-size: 66%;
+}
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+ /* font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+body {
+  background: rgb(92, 92, 114);
+  color: #888;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #648880;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+strong {
+  font-weight: 400;
+}
+
+cite, 
+em {
+  font-style: italic;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #2124c9;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4c7a74;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+
+a {
+  color: #648880;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+
+p a {
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.feature {
+  margin: 15px 0px;
+}
+.feature i {
+  float: left;
+  padding: 5px;
+  border-radius: 50%;
+  color: #1cbcb0;
+  border: 1px solid #1cbcb0;
+  margin-right: 5px;
+}
+
+
+
+
+
+/* heading*/
+
+
+.heading {
+  margin: 5rem auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0px;
+  text-align: center;
+  color: var(--th-color);
+}
+.container-about .heading h2{
+  font-size: 30px;
+}
+
+.heading div {
+  display: inline-block;
+  border-bottom: 0.2rem solid var(--th-color);
+  width: 15rem;
+}
+
+.heading div:hover {
+  width: 25rem;
+}
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkite-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+           box-sizing: border-box;
+}
+
+.container1 {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+
+.container,
+.grid {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.col-1-3 {
+  width: 33.33%;
+ 
+}
+.col-1-4 {
+  width: 33.33%;
+  height: 600px; /* Adjust the height as needed */
+  overflow: hidden; /* Ensures images don't overflow */
+}
+.col-1-5 {
+  width: 33.33%;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden; /* Ensures images don't overflow */
+}
+
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.col-1-3,
+.col-2-3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.grid,
+.col-1-3,
+.col-2-3 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+
+/*
+  ========================================
+  Leads
+  ========================================
+*/
+
+.lead {
+  text-align: center;
+}
+
+.lead p {
+  font-size: 21px;
+  line-height: 33px;
+}
+
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.btn-alt {
+  border: 1px solid #fff;
+  padding: 10px 30px;
+}
+
+.btn-alt:hover {
+  background: #fff;
+  color: #648880;
+}
+
+.btn-default {
+  border: 0;
+  background: #648880;
+  padding: 11px 30px;
+  font-size: 14px;
+}
+
+.btn-default:hover {
+  background: #77a198;
+}
+
+
+
+/*
+  ========================================
+  Home
+  ========================================
+*/
+
+.hero {
+  background: url(../images/home/log.jpg);  
+
+  color: #fff;
+  line-height: 44px;
+  padding: 22px 80px 66px 80px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 46px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.teaser img {
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 22px;
+  max-width: 100%;
+}
+
+.teaser a:hover h3 {
+  color: #a9b2b9;
+}
+
+
+
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+.container-about {
+  
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+
+}
+.container-about p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.container-about h2 {
+  font-size: 14px;
+}
+.container-about .content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-about .text-content {
+  flex: 1;
+  padding-right: 20px; /* Adjust spacing between text and image */
+  padding-left: 20px;
+}
+
+.container-about .text-content1 {
+  flex: 1;
+  padding-left: 100px;
+}
+
+
+.container-about .image-container {
+  flex: 1;
+}
+
+
+/*------------------------------------*\
+	Team
+\*------------------------------------*/
+
+.team {
+  position: relative;
+  background-color: #F4F4F4;
+  padding: 40px 20px;
+  margin: 15px 0px;
+  height:450px;
+}
+
+.team::after {
+  content: "";
+  background-color: #1C1D21;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0%;
+  z-index: 1;
+  -webkit-transition: 0.2s height;
+  transition: 0.2s height;
+}
+
+.team:hover:after {
+  height: 100%;
+}
+
+.team-img {
+  position: relative;
+  margin-bottom: 20px;
+  z-index: 11;
+}
+
+.team-img>img {
+width: 100%;
+}
+
+.team .overlay {
+  background: #1C1D21;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+.team:hover .overlay {
+  opacity: 0.8;
+}
+
+.team .team-content {
+  text-align: center;
+  position: relative;
+  z-index: 11;
+}
+
+.team .team-content h3 {
+  margin-bottom: 10px;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+}
+
+.team .team-content span {
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s color;
+  transition: 0.2s color;
+}
+
+.team:hover .team-content h3 {
+  color: #FFF;
+}
+
+.team:hover .team-content span {
+  color: #1cbcb0;
+}
+
+.team .team-social {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: 0.2s opacity;
+  transition: 0.2s opacity;
+}
+
+.team .team-social a {
+  display: block;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  background-color: #1cbcb0;
+  color: #FFF;
+}
+
+.team:hover .team-social {
+  opacity: 1;
+}
+
+
+/*
+  ========================================
+  Rows
+  ========================================
+*/
+
+.row {
+  background: #fff;
+  padding: 36px 0 14px 0;
+}
+
+.row,
+.row-alt {
+  min-width: 960px;
+}
+
+.row-alt {
+  background: #595b64;
+  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 44px 0 22px 0;
+}
+
+
+
+.partner {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.partner .heading h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.partner-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partner-item {
+  margin: 0 10px;
+}
+
+.partner-item img {
+  width: 280px; /* Set width for all images */
+  height: 280px; /* Set height for all images */
+  object-fit: contain; /* Ensure images maintain aspect ratio and cover the specified dimensions */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.partner-btn {
+  display: block;
+  background-color: #17bebb;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+}
+
+.partner-btn:hover {
+  background-color: #13867a;
+}
+
+
+
+
+.team-slider {
+  text-align: center;
+  justify-content: center;
+
+  padding: 50px 0;
+}
+
+.team-slider .heading  h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.team-carousel {
+  display: flex; /* Display children side by side */
+  justify-content: center;
+  flex-wrap: wrap;
+
+  
+}
+
+.our-team {
+  flex: 0 0 auto; /* Do not grow, do not shrink */
+  scroll-snap-align: start; /* Snap each child to the start of the container */
+  margin-right: 20px; /* Add some space between team members */
+  width: 300px; /* Set width of each team member card */
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px 15px 30px;
+  background: #e7e7f3;
+
+}
+
+.our-team .pic {
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 25px;
+  display: inline-block;
+  width: 100%;
+  /*height: 100%;*/
+  transition: all 0.5s ease 0s;
+}
+
+
+
+.our-team:hover .pic {
+  background: #17bebb;
+  border-radius: 50%;
+  padding: 1px; /* Reduce padding */
+  margin-bottom: 1px; /* Reduce margin */
+}
+
+.pic img {
+  width: 100%; /* Adjust image size as needed */
+  height: auto;
+  border-radius: 50%;
+}
+
+
+.our-team .title {
+  font-weight: 600;
+  color: #2e282a;
+  text-transform: uppercase;
+  display: block;
+  font-size: 20px;
+  margin: 0 0 7px 0;
+}
+
+.our-team .post {
+  color: #17bebb;
+  text-transform: capitalize;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.our-team .social {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.our-team .social li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.our-team .social li a {
+  border-radius: 50%;
+  font-size: 15px;
+  color: #17bebb;
+  border: 1px solid #17bebb;
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .social li a {
+  background: #17bebb;
+  color: #fff;
+}
+
+
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+
+
+
+.logo {
+  border-top: 4px solid #648880;
+  float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 2px 0 2px 0;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 66px 0 22px 0;
+  text-align: right;
+}
+
+.primary-nav {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
+}
+
+
+/*
+  ========================================
+  Primary footer
+  ========================================
+*/
+
+.primary-footer {
+  color: #648880;
+  font-size: 14px;
+  padding-bottom: 44px;
+  padding-top: 44px;
+}
+
+.primary-footer small {
+  float: left;
+  font-weight: 400;
+}
+
+
+
+/*
+  ========================================
+  Navigation
+  ========================================
+*/
+
+.nav {
+  text-align: right;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+
+
+/*
+  ========================================
+  Speakers
+  ========================================
+*/
+
+.speaker {
+  margin-bottom: 4px;
+}
+
+.speaker-info {
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
+  margin-top: 88px;
+  padding: 22px;
+  text-align: center;
+}
+
+.speaker-info img {
+  border-radius: 50%;
+  height: 130px;
+  margin: -66px 0 22px 0;
+  vertical-align: top;
+}
+
+
+
+/*
+  ========================================
+  Venue
+  ========================================
+*/
+
+.venue-theatre {
+  margin-bottom: 66px;
+}
+
+.venue-hotel {
+  margin-bottom: 22px;
+}
+
+.venue-map {
+  height: 264px;
+}
+
+
+
+/*
+  ========================================
+  Register
+  ========================================
+*/
+
+.why-attend {
+  list-style: square;
+  margin: 0 0 22px 30px;
+}
+
+form {
+  margin-bottom: 22px;
+}
+
+input,
+select,
+textarea {
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.register-group label {
+  color: #648880;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.register-group input,
+.register-group select,
+.register-group textarea {
+  border: 1px solid #c6c9cc;
+  border-radius: 5px;
+  color: #888;
+  display: block;
+  margin: 5px 0 27px 0;
+  padding: 5px 8px;
+}
+
+.register-group input,
+.register-group textarea {
+  width: 100%;
+}
+
+.register-group select {
+  height: 34px;
+  width: 60px;
+}
+
+.register-group textarea {
+  height: 78px;
+}
+
+
+
+/*
+  ========================================
+  Schedule
+  ========================================
+*/
+
+table {
+  margin-bottom: 44px;
+  width: 100%;
+}
+
+table:last-child {
+  margin-bottom: 0;
+}
+
+th, td {
+  padding-bottom: 22px;
+  vertical-align: top;
+}
+
+th {
+  padding-right: 45px;
+  text-align: right;
+  width: 20%;
+}
+
+td {
+  width: 40%;
+}
+
+thead {
+  line-height: 44px;
+}
+
+thead th {
+  color: #648880;
+  font-size: 24px;
+}
+
+tbody th {
+  color: #a9b2b9;
+  font-size: 14px;
+  font-weight: 400;
+  padding-top: 22px;
+  text-transform: uppercase;
+}
+
+tbody td {
+  border-top: 1px solid #dfe2e5;
+  padding-top: 21px;
+}
+
+tbody td:first-of-type {
+  padding-right: 15px;
+}
+
+tbody td:last-of-type {
+  padding-left: 15px;
+}
+
+tbody td:only-of-type {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+table a {
+  color: #888;
+}
+
+table h4 {
+  margin-bottom: 0;
+}
+
+.schedule-offset {
+  color: #a9b2b9;
+}
+
+/*------------------------------------*\
+	Contact
+\*------------------------------------*/
+
+.contact {
+  margin: 15px 0px;
+  text-align: center;
+}
+
+.contact i {
+  font-size: 36px;
+  color: #1cbcb0;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-form .input {
+  margin-bottom: 20px;
+}
+
+
+.contact-form .input:nth-child(1), .contact-form .input:nth-child(2) {
+  width: calc(50% - 10px);
+}
+
+.contact-form .input:nth-child(2) {
+  margin-left: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+input[type="tel"],
+textarea {
+  background: #fff !important;
+  opacity: 1;
+  border-bottom: none;
+}
+
+.contact-container {
+  justify-content: center;
+
+  display: flex;
+  justify-content: 10px; /* Adjust this value as needed */
+  flex-wrap: wrap;
+}
+
+.contact {
+  text-align: center;
+  margin-bottom: 20px;
+  flex: 1;
+  max-width: 200px; /* Set maximum width for each contact div */
+  margin-right: 20px; /* Add space between each contact div */
+  margin-left: 20px; /* Add space between each contact div */
+
+
+}
+
+
+.contact-form .input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.contact-form .input-group input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.contact-form .input-group input:last-child {
+  margin-right: 0;
+}
+
+.contact-form .input,
+textarea {
+  width: 70%;
+    height: 40px; /* Adjust the height as needed */
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #4e4a4a;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contact-form .main-btn {
+  background-color: #17bebb;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+}
+
+.contact-form .main-btn:hover {
+  background-color: #13867a;
+}
+
+
+.card-deck {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent cards from wrapping */
+  padding: 25px;
+}
+
+.card-deck .card1,
+.card-deck .card2,
+.card-deck .card3 {
+  flex: 0 0 auto; /* Ensure cards don't grow or shrink */
+  width: 33.33%; /* Equal width for each card */
+  margin-right: 10px; /* Adjust spacing between cards */
+}
+
+/* Optional: Remove right margin from the last card */
+.card-deck .card3 {
+  margin-right: 0;
+}
