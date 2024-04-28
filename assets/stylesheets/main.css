@@ -257,6 +257,8 @@ em {
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
+  text-align: left;
+  
 }
 
 /* Links inside the dropdown */
@@ -265,6 +267,7 @@ em {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  justify-content: start; /* Pack items from the start */
 }
 
 /* Change color of dropdown links on hover */
@@ -1238,4 +1241,12 @@ textarea {
 /* Optional: Remove right margin from the last card */
 .card-deck .card3 {
   margin-right: 0;
+}
+
+
+@media (max-width: 760px) {
+.container-about .content-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
