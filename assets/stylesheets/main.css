@@ -136,7 +136,7 @@ h4 {
   font-size: 18px;
 }
 
-h5 {
+h5 {  
   color: #a9b2b9;
   font-size: 14px;
   font-weight: 400;
@@ -368,6 +368,7 @@ p a {
 .grid {
   margin: 0 auto;
   width: 100%;
+  
 }
 
 .container {
@@ -382,12 +383,16 @@ p a {
 .col-1-4 {
   width: 33.33%;
   height: 600px; /* Adjust the height as needed */
-  overflow: hidden; /* Ensures images don't overflow */
+  overflow: hidden; /* Ensures images don't overflow */ 
 }
 .col-1-5 {
-  width: 33.33%;
+  background-color: #f1f7f8;
+  border-radius: 2%;
+  width: 32%;
   height: 500px; /* Adjust the height as needed */
   overflow: hidden; /* Ensures images don't overflow */
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 
@@ -409,6 +414,16 @@ p a {
 }
 
 
+.grid .mission {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.grid .mission  p {
+ font-size: 25px;
+ text-align: center;
+}
 /*
   ========================================
   Typography
@@ -529,7 +544,7 @@ p a {
 
 .group {
   clear: both;
-  *zoom: 1;
+  zoom: 1;
 }
 
 .container-about {
@@ -1243,10 +1258,55 @@ textarea {
   margin-right: 0;
 }
 
+.addressmap{
+  justify-content: center;
+  
+  
+}
 
-@media (max-width: 760px) {
+
+.addressmap iframe {
+  justify-content: center;
+  width: 90%;
+  height: 300px;
+  margin-left: 100px;
+}
+
+@media (max-width: 1150px) {
+
+.container-about {
+  padding: 20px;
+}  
 .container-about .content-container {
     display: flex;
     flex-direction: column;
   }
+  
+
+.container-about .text-content {
+    order: 1; /* Change the order of text content to be above the image */
+    margin-bottom: 20px; /* Add some space between text content and image */
+  }
+
+.container-about .image-container {
+    order: 2; /* Change the order of image container to be below the text */
+  }
+  
+.container-about .image-container img {
+  width: 90%;
+  height: 90%;
+margin-left: 30px;
+margin-bottom: 20px;
+  }
+
+.container-miss{
+  padding: 10px;
+  margin-top: 150px;
+}
+
+.nav a {
+  font-size: medium;
+}
+
+
 }
