@@ -700,6 +700,12 @@ width: 100%;
   padding: 36px 0 14px 0;
 }
 
+.row .resarchfield{
+  margin: 10px;
+  padding: 20px;
+  background-color: #f1f6f7;
+  border-radius: 2%;
+}
 .row,
 .row-alt {
   min-width: 960px;
