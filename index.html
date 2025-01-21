@@ -11,7 +11,146 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-	
+	<style>
+/* Container Styling */
+.container-about {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Heading Styling */
+.container-about .heading h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Announcement Box Styling */
+.announcement-box {
+    text-align: left;
+    margin-top: 1px;
+    min-height: 150px; /* Ensures a consistent height */
+}
+
+.announcement {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.announcement h3 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin: 0 0 10px 0;
+}
+
+.announcement p {
+    font-size: 1.5rem;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.announcement .date {
+    font-size: 1rem;
+    color: #473232;
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Controls Styling */
+.controls {
+    margin-top: 20px;
+}
+
+.controls .btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.controls .btn:hover {
+    background-color: #45a049;
+}
+
+.controls .btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.announcement-details {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+#back-btn {
+    margin-bottom: 20px;
+}
+
+/* Specific styling for PDF download button */
+.btn-download {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+
+}
+
+.btn-download:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Specific styling for external link button */
+.btn-link {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+
+}
+
+.btn-link:hover {
+    background-color: #1c7430;
+    border-color: #1c7430;
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .announcement h3 {
+        font-size: 1.25rem;
+    }
+
+    .announcement p {
+        font-size: 0.95rem;
+    }
+
+    .controls .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
 
  
 	</head>
@@ -31,8 +170,8 @@
 
 	      <nav class="nav primary-nav tagline">
 	      	<ul>
-				<li><a href="home.html">Home</a></li>
-		        <li><a href="index.html">About</a></li>
+				<li><a href="index.html">Home</a></li>
+		        <li><a href="home.html">About</a></li>
 				<li><a href="projets.html">Projets</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropbtn">Teams</a>
@@ -81,141 +220,110 @@
 		</section>
 	
 	
+        <section class="row">
+            <div class="heading">
+                <h2>Announcements</h2>
+                <div></div>
+            </div>
+            <div class="container-about" id="container-about">
+                <div class="announcement-box">
+                    <div class="announcement" id="announcement-content">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="prev-btn" class="btn">Previous</button>
+                    <button id="next-btn" class="btn">Next</button>
+                </div>
+            </div>
+        
+           
+        
+            <script>
+                const announcements = [
+    {
+        title: "PhD Program 2025: Call for Application",
+        description: "We are thrilled to announce the launch of applications for the 2025 PhD program. This exceptional opportunity is part of a collaborative initiative between Orange, the École Polytechnique de Tunisie (SERCOM Laboratory), and SOTULUB, a leading company based in Bizerte, Tunisia. The program focuses on the design and development of an advanced intelligent system tailored to optimize production processes within the framework of Industry 5.0, while prioritizing energy efficiency and sustainability.",
+        date: "2025-01-20",
+        resource: {
+            type: "pdf",
+            path: "Description du sujet de thèse.pdf" // Replace with the actual PDF path
+        }
+    },
+    {
+        title: "Hack4Earth Hackathon: Call for Participation",
+        description: "Join our upcoming hackathon on sustainable technologies for combating climate change.",
+        date: "2024-10-18",
+        resource: {
+            type: "link",
+            path: "https://hack4earth.sercomlab.tn/"
+        }
+    },
+    {
+        title: "IEEE AICCSA 2024: Call for Participation",
+        description: "The ACS/IEEE International Conference on Computer Systems and Applications (AICCSA) is the premier conference covering all contemporary areas in computer systems and applications. It implements an international forum for academics, industry researchers, developers, and practitioners to report and share groundbreaking contributions in various IT fields that range from distributed computing to data science, security and machine learning. ",
+        date: "2024-9-26",
+        resource: {
+            type: "link",
+            path: "https://aiccsa.net/AICCSA2024/"
+        }
+    }
+];
 
-		<section class="row">
-       			 <div class="container-about" id="container-about"> 
-					<div class="heading">
-						<h2>About SERCOM
-						</h2>
-						<div></div>
-					</div>
-							<p>
-								With an interdisciplinary approach in digital domains, the SERCOM laboratory was established in 2010 by researchers and professionals from various sectors. This initiative is dedicated to fostering cutting-edge research, thereby paving the path for exciting innovations and applications in the digital realm. SERCOM, under the auspices of the Ministry of Higher Education and Scientific Research, is affiliated with the Polytechnic School of Tunisia. Comprising four specialized teams—3S, computer vision, IoT & embedded systems, and optical communication—SERCOM converges efforts towards a singular goal: advancing research and innovation in the digital landscape.</p>
-							<p>SERCOM's objectives encompass:
+function displayAnnouncement(index) {
+    const announcementContent = document.getElementById("announcement-content");
+    const { title, description, date, resource } = announcements[index];
+    announcementContent.innerHTML = `
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <span class="date">Posted on: ${date}</span>
+        ${
+            resource.type === "pdf"
+                ? `<a href="${resource.path}" class="btn-download" download>More Details</a>`
+                : `<a href="${resource.path}" class="btn-link " target="_blank">More Details</a>`
+        }
+    `;
 
-							</p>
-							<div class="content-container">
+    // Enable or disable buttons based on index
+    document.getElementById("prev-btn").disabled = index === 0;
+    document.getElementById("next-btn").disabled = index === announcements.length - 1;
+}
 
-								<div class="text-content">
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Contributing to the advancement of scientific research in IT and Telecommunications.</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Proposing, supervising, and overseeing innovative research and development projects.
-									</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Collaborating with socio-economic partners both nationally and internationally.
-									</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Bridging the gap between scientific and academic research and the industrial sphere.</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Facilitating the integration of students and recent graduates into the professional landscape.</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Organizing scientific events on a national and international scale.</p>
-								</div>
-								</div>
+// Add event listeners to buttons
+document.getElementById("prev-btn").addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        displayAnnouncement(currentIndex);
+    }
+});
 
-								<div class="image-container" >
-								<div id="about-slider" class="owl-carousel owl-theme">
-										<img class="img-responsive" src="./assets/images/home/sercomm.png" alt="" width="100%" height="100%">
-								<!--<img class="img-responsive" src="./arsii/arsii-slide2.jpg" alt="">-->
-		
-									
-								</div>
-							</div>
-						
-						</div>
-				<!-- /Container -->
-		
-			</div>
-			<!-- /Why Choose Us -->
-			<div class="container-about" id="research"> 
+document.getElementById("next-btn").addEventListener("click", () => {
+    if (currentIndex < announcements.length - 1) {
+        currentIndex++;
+        displayAnnouncement(currentIndex);
+    }
+});
 
-			<div class="heading">
-				<h2> Research Themes
-				</h2>
-				<div></div>
-			</div> 
+// Initialize the first announcement
+let currentIndex = 0;
+displayAnnouncement(currentIndex);
 
+            </script>
+        
+
+            
 			
-
-				<div class="content-container">
-
-					<div class="image-container" >
-						<div id="about-slider" class="owl-carousel owl-theme">
-							<img class="img-responsive" src="./assets/images/home/research.png" alt="" width="100%" height="90%">
-							<!--<img class="img-responsive" src="./arsii/arsii-slide2.jpg" alt="">-->
-
-
-						</div>
-					</div>
-
-							<div class="text-content1">
-								
-									<p>SERCOM's Research interests encompass:</p>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Security and Scalable Systems
-									</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Image and Video Processing
-
-									</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Optical Communications
-									</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Embedded Systems					</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Digital Communications					</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Internet Of Things (IoT) and Big Data</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Blockchain and Distributed systems</p>
-								</div>
-								<div class="feature">
-									<i class="fa fa-check"></i>
-									<p>Artificial Intelligence and related Technologies</p>
-								</div>
-							</div>	
-								
-								
-				</div>
-
 
             <!-- /Container -->
 			<div class="container-miss" id="miss">
 
 			<div class="heading">
-				<h2>Our Missions
+				<h2>
 				</h2>
 				<div></div>
 			</div> 
 			<div class="grid">
 				<div class="mission">
-				<p> The missions of the SERCOM laboratory are multifaceted, ranging from contributing to research themes, proposing and supervising innovative projects, to organizing national and international scientific events.	</p>
 			</div>
 
 				
@@ -450,7 +558,7 @@
 
 			<section class="partner" id="partner">
 				<div class="heading">
-					<h2>Our Partneres</h2>
+					<h2>Our Partners</h2>
 					<div></div>
 				</div>
 				<div class="partner-list">
