@@ -12,8 +12,56 @@
 
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<style>
-/* Container Styling */
-.container-about {
+  .medias-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+
+  .medias-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .media-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .media-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+
+  .media-item h4 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .media-item h5 {
+    font-size: 1.8rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+
+  .media-item p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .media-item iframe {
+    width: 100%;
+    height: 215px;
+    border: none;
+    border-radius: 8px;
+  }
+  .container-about {
     background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
@@ -134,6 +182,12 @@
     background-color: #1c7430;
     border-color: #1c7430;
 }
+
+@media screen and (max-width: 768px) {
+    .media-item iframe {
+      height: 200px;
+    }
+  }
 /* Responsive Design */
 @media (max-width: 600px) {
     .announcement h3 {
@@ -150,7 +204,7 @@
     }
 }
 
-    </style>
+</style>
 
  
 	</head>
@@ -241,10 +295,22 @@
         
             <script>
                 const announcements = [
-    {
+				{
+    title: "🚀 Hack for Safer Roads – Join the Smart Mobility Hackathon! 🚀",
+    description: "Hack for Road Safety is a 24-hour innovation hackathon open to students, startups, and researchers. Whether you're a tech enthusiast, an IoT innovator, a data analyst, or simply passionate about finding creative solutions to improve road safety, this event is for you. Join us in developing cutting-edge ideas and technologies to save lives on Tunisia's roads!",
+    subDescription: "💡 What to Expect:\n🔸 24 hours of intense innovation, collaboration, and problem-solving\n🔸 Hands-on challenges focused on road safety, traffic management, and sustainable mobility\n🔸 Exciting prizes and valuable networking opportunities with industry leaders and fellow changemakers\n.",
+    date: "2025-04-26",
+    location: "École Polytechnique de Tunisie",
+    resource: {
+        type: "pdf",
+        path: "/home/sercom/sercomLab/hack.html" // Replace with the actual PDF path
+    }
+},
+	{
         title: "PhD Program 2025: Call for Application",
         description: "We are thrilled to announce the launch of applications for the 2025 PhD program. This exceptional opportunity is part of a collaborative initiative between Orange, the École Polytechnique de Tunisie (SERCOM Laboratory), and SOTULUB, a leading company based in Bizerte, Tunisia. The program focuses on the design and development of an advanced intelligent system tailored to optimize production processes within the framework of Industry 5.0, while prioritizing energy efficiency and sustainability.",
-        date: "2025-01-20",
+        subDescription:"",
+		date: "2025-01-20",
         resource: {
             type: "pdf",
             path: "Description du sujet de thèse.pdf" // Replace with the actual PDF path
@@ -253,6 +319,7 @@
     {
         title: "Hack4Earth Hackathon: Call for Participation",
         description: "Join our upcoming hackathon on sustainable technologies for combating climate change.",
+		subDescription:"",
         date: "2024-10-18",
         resource: {
             type: "link",
@@ -262,7 +329,8 @@
     {
         title: "IEEE AICCSA 2024: Call for Participation",
         description: "The ACS/IEEE International Conference on Computer Systems and Applications (AICCSA) is the premier conference covering all contemporary areas in computer systems and applications. It implements an international forum for academics, industry researchers, developers, and practitioners to report and share groundbreaking contributions in various IT fields that range from distributed computing to data science, security and machine learning. ",
-        date: "2024-9-26",
+        subDescription:"",
+		date: "2024-9-26",
         resource: {
             type: "link",
             path: "https://aiccsa.net/AICCSA2024/"
@@ -272,10 +340,11 @@
 
 function displayAnnouncement(index) {
     const announcementContent = document.getElementById("announcement-content");
-    const { title, description, date, resource } = announcements[index];
+    const { title, description, subDescription, date, resource } = announcements[index];
     announcementContent.innerHTML = `
         <h3>${title}</h3>
         <p>${description}</p>
+		<p>${subDescription}</p>
         <span class="date">Posted on: ${date}</span>
         ${
             resource.type === "pdf"
@@ -412,7 +481,15 @@ displayAnnouncement(currentIndex);
 
 					<!-- Full-width images with number and caption text -->
 					<div class="mySlides fade">
-					<div class="numbertext">1 / 3</div>
+						<div class="numbertext">1 / 4</div>
+						<img src="./assets/images/events/hack.png" swidth="100%" height="400px">
+						<div class="text"></div>
+	
+						<div class="text">Hack  for Road Safety Hackathon
+					</div>
+					</div>
+					<div class="mySlides fade">
+					<div class="numbertext">2 / 4</div>
 					<img src="./assets/images/events/aisca.png" swidth="100%" height="400px">
 					<div class="text"></div>
 
@@ -420,13 +497,13 @@ displayAnnouncement(currentIndex);
 					</div>
 
 					<div class="mySlides fade">
-					<div class="numbertext">2 / 3</div>
+					<div class="numbertext">3 / 4</div>
 					<img src="./assets/images/events/WOR.png" width="100%" height="400px">
 					<div class="text">The 1st International Workshop On  Data Engineering in IoT Systems (DEITS'23)</div>
 					</div>
 
 					<div class="mySlides fade">
-					<div class="numbertext">3 / 3</div>
+					<div class="numbertext">4 / 4</div>
 					<img src="./assets/images/events/jdpt.png" width="100%" height="400px">
 					<div class="text">The EPT Doctoral Day JDEPT'23</div>
 					</div>
@@ -471,6 +548,7 @@ displayAnnouncement(currentIndex);
 				
 				
 				</section><!--
+
 	  
 				Venue
 	  
@@ -555,6 +633,49 @@ displayAnnouncement(currentIndex);
 			</div>
 
 		</div>	
+		<section class="medias-section" id="medias">
+			<div class="heading">
+				<h2>Medias</h2>
+				<div></div>
+			</div>
+			<div class="partner-list">
+			
+			<div class="media-grid">
+			  
+			  
+			  <div class="media-item">
+				<h4>Hack for Road Safety – Mosaique FM</h4>
+				<h5>April 22, 2025</h5>
+				<p>New AI-powered application to detect phone usage while driving – featured on Mosaique FM.</p>
+				<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fmosaiquefm%2Fvideos%2F2145129259244328%2F&show_text=false&width=560" 
+						title="Facebook video player"
+						allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+						allowfullscreen></iframe>
+			  </div>
+		  
+			  <div class="media-item">
+				<h4>Hackathon Interview – Express FM</h4>
+				<h5>April 21, 2025</h5>
+				<p>Discussion about AI solutions for road safety and youth innovation on Express FM.</p>
+				<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FONSRTN%2Fvideos%2F1616352742389743%2F&show_text=false&width=560" 
+						title="Facebook video player"
+						allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+						allowfullscreen></iframe>
+			  </div>
+
+			  <div class="media-item">
+				<h4>Expresso Emission, Radio Express FM</h4>
+				<h5>February 1, 2024</h5>
+				<p>Do we have the means to achieve our ambitions in terms of training and research in Artificial Intelligence?</p>
+				<iframe src="https://www.youtube.com/embed/8eZ1hWbeWX4?si=ZRzdJuIxqNiDjssQ" 
+						title="YouTube video player"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						allowfullscreen></iframe>
+			  </div>
+		  
+		  
+			</div>
+		  </section>
 
 			<section class="partner" id="partner">
 				<div class="heading">
@@ -651,20 +772,7 @@ displayAnnouncement(currentIndex);
 						</ul>
 					</div>
 
-					<div class="our-team">
-						<div class="pic">
-							<img src="./assets/images/home/tako.png" alt="Wassim Sliti">
-						</div>
-						<h3 class="title">Takoua Abdellatif </h3>
-						<span class="post">Associate Professor, 3S team leader</span>
-							
-						<ul class="social">
-							<li><a href="#" class="fa fa-facebook"></a></li>
-							<li><a href="#" class="fa fa-twitter"></a></li>
-							<li><a href="#" class="fa fa-google-plus"></a></li>
-							<li><a href="#" class="fa fa-linkedin"></a></li>
-						</ul>
-					</div>
+			
 
 					<div class="our-team">
 						<div class="pic">
@@ -689,6 +797,20 @@ displayAnnouncement(currentIndex);
 						</div>
 						<h3 class="title">Faouzi Bahloul </h3>
 						<span class="post">Associate Professor, Optical Communication Team leader</span>
+							
+						<ul class="social">
+							<li><a href="#" class="fa fa-facebook"></a></li>
+							<li><a href="#" class="fa fa-twitter"></a></li>
+							<li><a href="#" class="fa fa-google-plus"></a></li>
+							<li><a href="#" class="fa fa-linkedin"></a></li>
+						</ul>
+					</div>
+					<div class="our-team">
+						<div class="pic">
+							<img src="./assets/images/home/tako.png" alt="Wassim Sliti">
+						</div>
+						<h3 class="title">Takoua Abdellatif </h3>
+						<span class="post">Associate Professor, 3S team leader</span>
 							
 						<ul class="social">
 							<li><a href="#" class="fa fa-facebook"></a></li>
